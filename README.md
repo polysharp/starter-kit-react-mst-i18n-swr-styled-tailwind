@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React
 - Mobx State Tree
 - i18next
-- Apollo Boost
+- swr (data fetching) (Need to be installed)
 - Styled-Components
 - Tailwindcss
 
