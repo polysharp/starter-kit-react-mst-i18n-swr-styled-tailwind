@@ -1,6 +1,5 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import { useMutation } from '@apollo/react-hooks';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -38,7 +37,7 @@ const SignInPage = () => {
         validationSchema={SignInSchema}
         onSubmit={(values, { setSubmitting }) => {
           setSubmitting(true);
-          auth({ variables: { ...values } });
+          console.log('Please provide an auth fetcher');
           setSubmitting(false);
         }}
       >
@@ -84,7 +83,7 @@ const SignInPage = () => {
             <div className="w-full mt-8">
               <button
                 type="submit"
-                disabled={!isValid || isSubmitting || loading}
+                disabled={!isValid || isSubmitting}
                 className="transition duration-150 ease-in"
               >
                 Se connecter
@@ -92,7 +91,7 @@ const SignInPage = () => {
               <Divider label="OU" />
               <NavLink
                 to="/auth/signup"
-                disabled={isSubmitting || loading}
+                disabled={isSubmitting}
                 className="mt-6 transition duration-150 ease-in"
               >
                 Créer un compte

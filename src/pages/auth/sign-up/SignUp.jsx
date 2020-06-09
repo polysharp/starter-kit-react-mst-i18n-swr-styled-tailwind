@@ -1,7 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { useMutation } from '@apollo/react-hooks';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
 
@@ -58,7 +57,7 @@ const SignUpPage = () => {
         onSubmit={(values, { setSubmitting }) => {
           const { email, password, firstName, lastName, language, currency } = values;
           setSubmitting(true);
-          auth({ variables: { email, password, firstName, lastName, language, currency } });
+          console.log('Please provide an auth fetcher');
           setSubmitting(false);
         }}
       >
@@ -125,7 +124,7 @@ const SignUpPage = () => {
             <div className="w-full mt-8">
               <button
                 type="submit"
-                disabled={!(isValid && dirty) || isSubmitting || loading}
+                disabled={!(isValid && dirty) || isSubmitting}
                 className="transition duration-150 ease-in"
               >
                 Créer mon compte
@@ -133,7 +132,7 @@ const SignUpPage = () => {
               <Divider label="OU" />
               <NavLink
                 to="/auth/signin"
-                disabled={isSubmitting || loading}
+                disabled={isSubmitting}
                 className="mt-6 transition duration-150 ease-in"
               >
                 Se connecter
