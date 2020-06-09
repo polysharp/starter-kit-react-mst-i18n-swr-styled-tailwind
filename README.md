@@ -5,7 +5,7 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - React
 - Mobx State Tree
 - i18next
-- Apollo Boost
+- UseQuery hooks (Need to be updated)
 - Styled-Components
 - Tailwindcss
 
